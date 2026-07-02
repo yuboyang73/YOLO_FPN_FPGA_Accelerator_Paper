@@ -1,0 +1,87 @@
+# A2 Feature Entropy Measurement Result
+
+Experiment ID:
+A2_entropy_pruning
+
+Experiment stage:
+Stage 1 - YOLO Baseline Establishment and Entropy-Guided FPN Pruning
+
+Experiment objective:
+Measure the feature-map spatial information entropy of YOLOv8n Neck/FPN/PAN fusion-refinement layers and provide evidence for later pruning decisions.
+
+Baseline checkpoint:
+07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep/weights/best.pt
+
+Dataset:
+03_dataset/yolo_format/neu_det.yaml
+
+Split:
+val
+
+Image count:
+64
+
+Measured layers:
+12, 15, 18, 21
+
+Entropy method:
+For each selected layer, the output tensor is treated as BxCxHxW. Each channel map is normalized to [0, 1], converted to a 256-bin histogram, and measured by spatial entropy:
+
+H_c = -sum_b p_c(b) * log2(p_c(b) + eps)
+
+Layer-level entropy:
+H_bar = mean_c(H_c)
+
+Epsilon:
+1e-8
+
+Result summary:
+
+rank 1:
+layer: 21
+module: C2f
+shape: 1x256x20x20
+mean_entropy: 5.694966
+activation_elements: 102400
+interpretation: lowest entropy but lowest feature-map movement cost.
+
+rank 2:
+layer: 18
+module: C2f
+shape: 1x128x40x40
+mean_entropy: 6.043128
+activation_elements: 204800
+interpretation: balanced candidate with relatively low entropy and non-trivial movement cost.
+
+rank 3:
+layer: 15
+module: C2f
+shape: 1x64x80x80
+mean_entropy: 6.179063
+activation_elements: 409600
+interpretation: highest movement cost but not the lowest entropy.
+
+rank 4:
+layer: 12
+module: C2f
+shape: 1x128x40x40
+mean_entropy: 6.265172
+activation_elements: 204800
+interpretation: highest measured entropy; not a first pruning candidate.
+
+Conclusion:
+The entropy-only lowest layer is layer 21. However, because layer 21 also has the smallest activation footprint, it is not the strongest hardware-aware pruning target. Considering both feature entropy and activation movement cost, layer 18 is selected as the primary candidate for the next pruning-design step. Layer 21 and layer 15 should be retained as control candidates for ablation-style comparison.
+
+Generated evidence files:
+hook_tensor_shapes.csv
+hook_tensor_shapes.txt
+entropy_ranking.csv
+entropy_summary.txt
+entropy_pruning_candidate_analysis.txt
+
+Next step:
+Design the pruning intervention and define fair comparison groups:
+1. Entropy-guided candidate pruning.
+2. Random pruning under the same pruning budget.
+3. L1-norm pruning under the same pruning budget.
+4. Fine-tune each pruned model and compare mAP, FLOPs, and Params against A1 baseline.

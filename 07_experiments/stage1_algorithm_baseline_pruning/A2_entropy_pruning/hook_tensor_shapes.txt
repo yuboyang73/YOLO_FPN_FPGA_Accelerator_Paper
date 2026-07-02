@@ -1,0 +1,45 @@
+YOLOv8n FPN/PAN Hook Tensor Shape Record
+
+model: 07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep/weights/best.pt
+data: 03_dataset/yolo_format/neu_det.yaml
+split: val
+image_dir: D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val
+layers: 12, 15, 18, 21
+image_count: 8
+
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_102.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_102.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_102.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_102.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_104.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_104.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_104.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_104.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_105.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_105.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_105.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_105.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_111.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_111.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_111.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_111.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_113.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_113.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_113.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_113.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_116.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_116.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_116.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_116.jpg | layer=21 | module=C2f | shape=1x256x20x20
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_126.jpg | layer=12 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_126.jpg | layer=15 | module=C2f | shape=1x64x80x80
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_126.jpg | layer=18 | module=C2f | shape=1x128x40x40
+image=D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_126.jpg | layer=21 | module=C2f | shape=1x256x20x20

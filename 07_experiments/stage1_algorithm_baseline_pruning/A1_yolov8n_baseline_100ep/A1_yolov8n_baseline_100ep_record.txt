@@ -1,0 +1,108 @@
+# A1 YOLOv8n Baseline 100 Epoch Experiment Record
+
+Experiment ID:
+A1_yolov8n_baseline_100ep
+
+Experiment stage:
+Stage 1 - YOLO Baseline Establishment and Entropy-Guided FPN Pruning
+
+Purpose:
+Establish the official YOLOv8n baseline on the NEU-DET YOLO-format dataset before FPN/PAN feature analysis and entropy-guided pruning.
+
+Repository state note:
+This record was generated from the current checked local workspace. The workspace was not synchronized with remote because local experimental outputs and configuration changes already existed.
+
+Dataset:
+03_dataset/yolo_format/neu_det.yaml
+
+Classes:
+0 - crazing
+1 - inclusion
+2 - patches
+3 - pitted_surface
+4 - rolled-in_scale
+5 - scratches
+
+Training command:
+yolo train model="yolov8n.pt" data="03_dataset\yolo_format\neu_det.yaml" epochs=100 imgsz=640 batch=16 device=0 project="07_experiments\stage1_algorithm_baseline_pruning" name="A1_yolov8n_baseline_100ep"
+
+Key training parameters:
+model: yolov8n.pt
+epochs: 100
+batch: 16
+imgsz: 640
+device: CUDA:0
+optimizer: auto
+pretrained: true
+seed: 0
+deterministic: true
+amp: true
+mosaic: 1.0
+fliplr: 0.5
+close_mosaic: 10
+
+Model summary from validation:
+layers: 73
+parameters: 3,006,818
+GFLOPs: 8.1
+
+Final epoch metrics from results.csv:
+epoch: 100
+training time: 942.95 s
+train/box_loss: 1.01369
+train/cls_loss: 0.80734
+train/dfl_loss: 1.30128
+precision: 0.69560
+recall: 0.72453
+mAP50: 0.76597
+mAP50-95: 0.44595
+val/box_loss: 1.46888
+val/cls_loss: 1.10962
+val/dfl_loss: 1.65131
+learning rate group 0: 1.99e-05
+learning rate group 1: 1.99e-05
+learning rate group 2: 1.99e-05
+
+Best checkpoint validation metrics copied from terminal output:
+all: images=360, instances=828, precision=0.733, recall=0.699, mAP50=0.759, mAP50-95=0.447
+crazing: images=66, instances=145, precision=0.528, recall=0.317, mAP50=0.406, mAP50-95=0.152
+inclusion: images=77, instances=214, precision=0.764, recall=0.790, mAP50=0.814, mAP50-95=0.453
+patches: images=63, instances=154, precision=0.824, recall=0.916, mAP50=0.935, mAP50-95=0.632
+pitted_surface: images=59, instances=87, precision=0.799, recall=0.730, mAP50=0.812, mAP50-95=0.501
+rolled-in_scale: images=57, instances=124, precision=0.643, recall=0.516, mAP50=0.628, mAP50-95=0.339
+scratches: images=61, instances=104, precision=0.837, recall=0.923, mAP50=0.958, mAP50-95=0.603
+
+Validation speed:
+preprocess: 0.4 ms/image
+inference: 1.5 ms/image
+loss: 0.0 ms/image
+postprocess: 1.3 ms/image
+
+Archived experiment directory:
+07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep
+
+Important files:
+weights/best.pt
+weights/last.pt
+results.csv
+args.yaml
+results.png
+confusion_matrix.png
+confusion_matrix_normalized.png
+BoxP_curve.png
+BoxR_curve.png
+BoxPR_curve.png
+BoxF1_curve.png
+
+Recommended value for paper Table 2 baseline row:
+Strategy: Baseline YOLOv8n
+Branches pruned: 0
+mAP@0.5: 0.759
+mAP@0.5:0.95: 0.447
+Params: 3.006818 M
+FLOPs: 8.1 G
+
+Notes:
+1. The official baseline is valid and should be used as the reference for entropy pruning, random pruning, and L1-norm pruning comparisons.
+2. The class-level result shows lower performance on crazing and rolled-in_scale, which can be discussed as texture/scale-sensitive defect categories.
+3. Later feature entropy extraction and FPN/PAN hook scripts should use weights/best.pt from this archived directory.

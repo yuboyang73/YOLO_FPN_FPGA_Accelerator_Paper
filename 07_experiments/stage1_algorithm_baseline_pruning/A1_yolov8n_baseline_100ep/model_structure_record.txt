@@ -1,0 +1,80 @@
+# YOLOv8n Neck / FPN / PAN Structure Record
+
+Experiment:
+A1_yolov8n_baseline_100ep
+
+Model checkpoint:
+07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep/weights/best.pt
+
+Purpose:
+Record the YOLOv8n Neck/FPN/PAN fusion structure before entropy-based feature analysis and pruning.
+
+Source command:
+python -c "from ultralytics import YOLO; model=YOLO(r'07_experiments\stage1_algorithm_baseline_pruning\A1_yolov8n_baseline_100ep\weights\best.pt'); print(model.model)"
+
+Key Neck / FPN / PAN layers:
+
+10: Upsample
+Role: FPN top-down upsampling.
+
+11: Concat
+Role: FPN feature fusion.
+
+12: C2f
+Role: Feature refinement after the first FPN fusion.
+
+13: Upsample
+Role: FPN top-down upsampling.
+
+14: Concat
+Role: FPN feature fusion.
+
+15: C2f
+Role: Feature refinement after the second FPN fusion.
+
+16: Conv, stride=2
+Role: PAN bottom-up downsampling.
+
+17: Concat
+Role: PAN feature fusion.
+
+18: C2f
+Role: Feature refinement after the first PAN fusion.
+
+19: Conv, stride=2
+Role: PAN bottom-up downsampling.
+
+20: Concat
+Role: PAN feature fusion.
+
+21: C2f
+Role: Feature refinement after the second PAN fusion.
+
+22: Detect
+Role: Multi-scale detection head.
+
+Structure summary:
+Layers 10-15 form the FPN top-down path.
+Layers 16-21 form the PAN bottom-up path.
+Layer 22 is the final detection head.
+
+Important fusion layers:
+Concat layers: 11, 14, 17, 20
+
+Fusion refinement layers:
+C2f layers: 12, 15, 18, 21
+
+Recommended entropy hook layers for the first round:
+12, 15, 18, 21
+
+Reason:
+Layers 12, 15, 18, and 21 are the refined outputs after multi-scale feature fusion. Their tensors are suitable for first-round feature information entropy analysis because they represent the effective output of each fusion stage.
+
+Optional branch-level analysis layers:
+11, 14, 17, 20
+
+Reason:
+Concat layers preserve the fused tensor before refinement. They are useful for finer branch-level analysis, but their channels must be split according to the source branches before calculating branch-specific entropy.
+
+Next experiment:
+Write a hook script to extract the output tensors of layers 12, 15, 18, and 21 on validation images, then record tensor shapes and compute channel-wise spatial entropy.

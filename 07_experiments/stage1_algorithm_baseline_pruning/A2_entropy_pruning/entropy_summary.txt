@@ -1,0 +1,19 @@
+YOLOv8n FPN/PAN Feature Entropy Summary
+
+model: 07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep/weights/best.pt
+data: 03_dataset/yolo_format/neu_det.yaml
+split: val
+image_dir: D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val
+image_count: 64
+layers: 12, 15, 18, 21
+bins: 256
+epsilon: 1e-08
+
+Entropy ranking, low to high:
+rank=1 | layer=21 | module=C2f | shape=1x256x20x20 | samples=64 | mean_entropy=5.694966 | std_entropy=0.831298 | activation_elements=102400 | cost_entropy_ratio=17980.79
+rank=2 | layer=18 | module=C2f | shape=1x128x40x40 | samples=64 | mean_entropy=6.043128 | std_entropy=0.923992 | activation_elements=204800 | cost_entropy_ratio=33889.74
+rank=3 | layer=15 | module=C2f | shape=1x64x80x80 | samples=64 | mean_entropy=6.179063 | std_entropy=0.984084 | activation_elements=409600 | cost_entropy_ratio=66288.37
+rank=4 | layer=12 | module=C2f | shape=1x128x40x40 | samples=64 | mean_entropy=6.265172 | std_entropy=0.805458 | activation_elements=204800 | cost_entropy_ratio=32688.65
+
+Interpretation note:
+Lower mean entropy indicates a lower-information feature candidate. A high activation_elements or cost_entropy_ratio value indicates a larger feature-map movement cost. Pruning decisions should consider both entropy and hardware cost, and should not be made from entropy alone.

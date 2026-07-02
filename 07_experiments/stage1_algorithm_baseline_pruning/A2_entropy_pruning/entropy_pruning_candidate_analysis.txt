@@ -1,0 +1,98 @@
+# Entropy-Guided Pruning Candidate Analysis
+
+Experiment:
+A2_entropy_pruning
+
+Purpose:
+Analyze the YOLOv8n FPN/PAN feature entropy results and identify candidate layers for later pruning experiments. This file does not define a final pruning operation. It records the evidence-based candidate selection before modifying any model structure.
+
+Input baseline:
+07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep/weights/best.pt
+
+Entropy measurement files:
+entropy_ranking.csv
+entropy_summary.txt
+
+Hook layers:
+12, 15, 18, 21
+
+Entropy ranking, low to high:
+
+1. layer 21
+   module: C2f
+   shape: 1x256x20x20
+   samples: 64
+   mean_entropy: 5.694966
+   std_entropy: 0.831298
+   activation_elements: 102400
+   cost_entropy_ratio: 17980.79
+
+2. layer 18
+   module: C2f
+   shape: 1x128x40x40
+   samples: 64
+   mean_entropy: 6.043128
+   std_entropy: 0.923992
+   activation_elements: 204800
+   cost_entropy_ratio: 33889.74
+
+3. layer 15
+   module: C2f
+   shape: 1x64x80x80
+   samples: 64
+   mean_entropy: 6.179063
+   std_entropy: 0.984084
+   activation_elements: 409600
+   cost_entropy_ratio: 66288.37
+
+4. layer 12
+   module: C2f
+   shape: 1x128x40x40
+   samples: 64
+   mean_entropy: 6.265172
+   std_entropy: 0.805458
+   activation_elements: 204800
+   cost_entropy_ratio: 32688.65
+
+Hardware-cost proxy ranking, high to low:
+
+1. layer 15
+   activation_elements: 409600
+   interpretation: highest feature-map movement cost among measured layers.
+
+2. layer 12
+   activation_elements: 204800
+   interpretation: medium feature-map movement cost.
+
+3. layer 18
+   activation_elements: 204800
+   interpretation: medium feature-map movement cost.
+
+4. layer 21
+   activation_elements: 102400
+   interpretation: lowest feature-map movement cost among measured layers.
+
+Candidate interpretation:
+
+Layer 21 has the lowest measured entropy, but it also has the smallest feature map. Pruning it directly would be weakly aligned with the paper's hardware motivation because its activation movement cost is the lowest among the four measured fusion-refinement layers.
+
+Layer 15 has the largest activation movement cost, but its entropy is not low. It should be treated as a hardware-cost-heavy layer, not as the strongest entropy-guided pruning candidate.
+
+Layer 18 is the most balanced first candidate. It has the second-lowest entropy and a medium activation movement cost. It is therefore better aligned with the criterion "lower information value with non-trivial feature-map movement cost".
+
+Layer 12 has the highest entropy among the measured layers and should not be the first pruning candidate.
+
+Recommended candidate set for the next pruning-design step:
+
+Primary candidate:
+layer 18
+
+Control candidates:
+layer 21 as the entropy-lowest candidate.
+layer 15 as the hardware-cost-highest candidate.
+
+Do not prune yet:
+This experiment only identifies candidate layers. The next step should design a pruning strategy and compare it with random pruning and L1-norm pruning under the same pruning budget.
+
+Paper-use statement:
+The entropy measurement indicates that the final PAN refinement layer (layer 21) has the lowest spatial feature entropy, while layer 15 has the largest activation footprint. Considering both information entropy and hardware movement cost, layer 18 is selected as the first balanced candidate for entropy-guided pruning analysis.

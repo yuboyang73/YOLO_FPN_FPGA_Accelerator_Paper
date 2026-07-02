@@ -1,0 +1,115 @@
+# A2 Entropy Measurement Experiment Completion Report
+
+Experiment:
+A2_entropy_pruning
+
+Stage:
+Stage 1 - YOLO Baseline Establishment and Entropy-Guided FPN Pruning
+
+Experiment objective:
+Measure the feature-map entropy of YOLOv8n FPN/PAN fusion-refinement layers and identify evidence-based pruning candidates.
+
+Baseline checkpoint:
+07_experiments/stage1_algorithm_baseline_pruning/A1_yolov8n_baseline_100ep/weights/best.pt
+
+Dataset:
+03_dataset/yolo_format/neu_det.yaml
+
+Input split:
+val
+
+Measured images:
+64
+
+Measured layers:
+12, 15, 18, 21
+
+Completed steps:
+1. Identified YOLOv8n Neck/FPN/PAN key layers.
+2. Confirmed hook accessibility for layers 12, 15, 18, and 21.
+3. Recorded hook tensor shapes.
+4. Computed 256-bin channel-wise spatial entropy.
+5. Ranked fusion-refinement layers by mean feature entropy.
+6. Compared entropy with activation movement cost proxy.
+7. Generated pruning candidate analysis.
+
+Evidence files:
+../A1_yolov8n_baseline_100ep/model_structure_record.txt
+hook_tensor_shapes.csv
+hook_tensor_shapes.txt
+extract_fpn_hook_shapes.py
+extract_feature_entropy.py
+entropy_ranking.csv
+entropy_summary.txt
+entropy_pruning_candidate_analysis.txt
+A2_entropy_measurement_result.txt
+
+Tensor shapes:
+layer 12: C2f, 1x128x40x40
+layer 15: C2f, 1x64x80x80
+layer 18: C2f, 1x128x40x40
+layer 21: C2f, 1x256x20x20
+
+Entropy results:
+
+rank 1:
+layer: 21
+module: C2f
+shape: 1x256x20x20
+samples: 64
+mean_entropy: 5.694966
+activation_elements: 102400
+interpretation: entropy-lowest layer, but also the smallest feature map.
+
+rank 2:
+layer: 18
+module: C2f
+shape: 1x128x40x40
+samples: 64
+mean_entropy: 6.043128
+activation_elements: 204800
+interpretation: balanced candidate with relatively low entropy and non-trivial activation movement cost.
+
+rank 3:
+layer: 15
+module: C2f
+shape: 1x64x80x80
+samples: 64
+mean_entropy: 6.179063
+activation_elements: 409600
+interpretation: highest movement-cost layer, but not the lowest entropy layer.
+
+rank 4:
+layer: 12
+module: C2f
+shape: 1x128x40x40
+samples: 64
+mean_entropy: 6.265172
+activation_elements: 204800
+interpretation: highest measured entropy, not preferred as a first pruning target.
+
+Main conclusion:
+Layer 21 is the entropy-lowest fusion-refinement layer, but its activation footprint is the smallest among the measured layers. Layer 15 has the largest activation footprint, but its entropy is not low. Layer 18 provides the best first candidate for hardware-aware entropy-guided pruning because it combines relatively low entropy with a non-trivial feature-map movement cost.
+
+Recommended pruning candidate:
+Primary candidate: layer 18
+
+Control candidates:
+Entropy-lowest control: layer 21
+Hardware-cost-highest control: layer 15
+
+Not recommended as first candidate:
+layer 12
+
+Experiment boundary:
+This experiment completed entropy measurement and candidate selection only. It did not modify the YOLO model, prune channels, remove branches, or perform fine-tuning.
+
+Minimum next actions:
+1. Define the exact pruning intervention for layer 18.
+2. Keep pruning budget fixed across Entropy, Random, and L1-Norm experiments.
+3. Fine-tune each pruned model using the same dataset and training settings.
+4. Record mAP@0.5, mAP@0.5:0.95, FLOPs, Params, and latency.
+5. Fill Table 2: Entropy-Guided Pruning Strategy Ablation.
+
+Paper-ready result statement:
+The feature entropy analysis over 64 validation images shows that layer 21 has the lowest average spatial entropy, while layer 15 has the largest activation footprint. Considering both information entropy and activation movement cost, layer 18 is selected as the primary hardware-aware entropy-guided pruning candidate for the next ablation experiment.
