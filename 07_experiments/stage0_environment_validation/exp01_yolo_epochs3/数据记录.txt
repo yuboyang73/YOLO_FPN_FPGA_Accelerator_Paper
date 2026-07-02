@@ -1,0 +1,6 @@
+YOL0v8n 
+129 layers,
+3, 157,200 parameters,
+0 gradients,
+8.9 GFL0Ps
+

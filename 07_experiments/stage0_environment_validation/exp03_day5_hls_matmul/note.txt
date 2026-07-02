@@ -1,0 +1,47 @@
+Step 5: C Simulation passed.
+Input: 4x4 matrix A and identity matrix B.
+Expected output: C = A.
+Result: TEST PASSED.
+
+Top function: matrix_mult
+Latency: 69 cycles / 690 ns
+Interval: 70
+Pipelined: no
+BRAM: 0
+DSP: 6
+FF: 869
+LUT: 793
+URAM: 0
+
+Loop: Row_Col
+Latency: 67 cycles / 670 ns
+Iteration Latency: 8
+Interval: 4
+Trip Count: 16
+Pipelined: yes
+
+Day 5 result:
+C/RTL Cosimulation passed.
+
+Tool: Vivado HLS 2022.2
+Simulator: Vivado XSIM
+RTL: Verilog
+Target device: xc7z020-clg400-1
+Top function: matrix_mult
+Cosim status: PASS
+Latency: 67 cycles
+
+Conclusion:
+The generated RTL implementation produces the same output as the C++ behavior model for the 4x4 matrix multiplication test.
+
+Day 5 Final Conclusion
+
+The Vivado HLS matrix multiplication demo was successfully completed.
+The C++ behavior model passed C Simulation.
+The design was synthesized into Verilog RTL targeting xc7z020-clg400-1.
+The generated RTL passed C/RTL Cosimulation using Vivado XSIM.
+
+This confirms that the local HLS toolchain can complete the full verification flow:
+C Simulation -> C Synthesis -> C/RTL Cosimulation.
+
+The same verification flow will be reused for the later HLS implementation of the streaming Concat + 3x3 Conv operator.

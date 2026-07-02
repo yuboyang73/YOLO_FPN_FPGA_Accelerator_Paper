@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="matrix_mult.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage0_environment_validation\exp03_day5_hls_matmul\src\matrix_mult.cpp"/>
+    <originFiles name="matrix_mult.h" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage0_environment_validation\exp03_day5_hls_matmul\src\matrix_mult.h"/>
+  </source>
+  <testbench>
+    <originFiles name="matrix_mult_test.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage0_environment_validation\exp03_day5_hls_matmul\tb\matrix_mult_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

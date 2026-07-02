@@ -1,0 +1,12 @@
+all:
+Images      = 360
+Instances   = 828
+Precision   = 0.554
+Recall      = 0.541
+mAP@0.5     = 0.538
+mAP@0.5:0.95= 0.249
+
+130 layers
+3,012, 018 parameter
+0 gradients
+8.2 GFLOPs

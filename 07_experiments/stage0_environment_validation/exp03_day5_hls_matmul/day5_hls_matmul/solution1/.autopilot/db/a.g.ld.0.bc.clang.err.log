@@ -1,0 +1,2 @@
+remark: src/matrix_mult.cpp:22:13: Loop 'Product' is marked as complete unroll implied by the pipeline pragma
+remark: src/matrix_mult.cpp:7:0: Unrolling loop 'Product' (src/matrix_mult.cpp:22:13) in function 'matrix_mult' completely with a factor of 4

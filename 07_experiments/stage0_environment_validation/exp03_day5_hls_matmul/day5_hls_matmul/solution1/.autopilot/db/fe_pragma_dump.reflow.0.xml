@@ -1,0 +1,7 @@
+<pragmas>
+<pragma file="src/matrix_mult.cpp" line="17" pragmaType="pipeline" parentfunction="matrix_mult" off="0" ii="1" rewind="0" style=""/>
+<pragma file="src/matrix_mult.cpp" line="8" pragmaType="interface" parentfunction="matrix_mult" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="src/matrix_mult.cpp" line="9" pragmaType="interface" parentfunction="matrix_mult" mode="s_axilite" port="A" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="src/matrix_mult.cpp" line="10" pragmaType="interface" parentfunction="matrix_mult" mode="s_axilite" port="B" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="src/matrix_mult.cpp" line="11" pragmaType="interface" parentfunction="matrix_mult" mode="s_axilite" port="C" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+</pragmas>
