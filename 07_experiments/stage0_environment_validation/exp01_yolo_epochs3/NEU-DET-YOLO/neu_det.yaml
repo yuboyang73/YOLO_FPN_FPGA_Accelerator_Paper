@@ -1,4 +1,4 @@
-path: D:/1daxue/.paperResearch/yolo_fpga_accel/yolo_fpga_exp/NEU-DET-YOLO
+path: .
 
 train: images/train
 val: images/val
