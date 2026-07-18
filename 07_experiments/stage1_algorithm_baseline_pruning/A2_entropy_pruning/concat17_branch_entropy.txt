@@ -1,0 +1,4 @@
+Layer 17 Concat Branch Entropy
+
+branch=0 | source=layer 16 downsample branch | shape=(1, 64, 40, 40) | samples=64 | mean_entropy=5.685125 | std_entropy=0.086789 | activation_elements=102400
+branch=1 | source=layer 12 skip branch | shape=(1, 128, 40, 40) | samples=64 | mean_entropy=6.265172 | std_entropy=0.052066 | activation_elements=204800

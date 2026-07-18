@@ -1,0 +1,75 @@
+# Stage 2 Streaming Frontend C Synthesis Report
+
+Date: 2026-07-18
+Tool: Vitis HLS 2022.2
+Project: streaming_frontend_core
+Solution: solution1
+Top function: streaming_frontend
+Target part: xc7z020-clg400-1
+Target clock: 5.00 ns (200 MHz)
+
+## Verification result
+
+C Simulation was rerun after removing the full intermediate window buffer:
+
+```text
+[TB] Input values: 102400
+[TB] Weight values: 36864
+[TB] Golden output values: 102400
+MSE: 0
+Max absolute error: 0
+[PASS] Streaming Conv matches golden_output.txt
+INFO: [SIM 211-1] CSim done with 0 errors.
+```
+
+## Top-level performance estimates
+
+- Estimated clock period: 3.592 ns
+- Target clock period: 5.000 ns
+- Estimated Fmax: 278.36 MHz
+- Latency: 120,115,201 cycles
+- Interval: 120,115,202 cycles
+- Estimated latency at the 5 ns target: approximately 0.601 s
+- Top-level pipeline type: no
+
+## Resource estimates
+
+| Resource | Used | Available | Utilization |
+|---|---:|---:|---:|
+| BRAM_18K | 0 | 280 | 0% |
+| DSP | 9 | 220 | 4% |
+| FF | 3,488 | 106,400 | 3% |
+| LUT | 3,676 | 53,200 | 6% |
+| URAM | 0 | 0 | 0% |
+
+## Loop result
+
+The main input-channel MAC loop was automatically pipelined, but the
+accumulator recurrence prevents the target II=1:
+
+```text
+Loop: VITIS_LOOP_29_4
+Final II: 18
+Target II: 1
+Trip count: 64
+Pipeline: yes
+```
+
+## Interpretation
+
+The previous implementation stored all 64 x 1444 x 3 x 3 valid windows,
+which caused 1025 BRAM_18K blocks and exceeded the 280 BRAM_18K blocks
+available on the Zynq-7020. The revised implementation constructs one 3x3
+window on demand and immediately performs the MAC. This removes the full
+window storage and reduces the estimated BRAM use to zero while preserving
+the golden output exactly.
+
+This is a memory-safe functional/HLS baseline. It is not yet the final
+AXI4-Stream architecture: the current top-level interface remains
+`ap_memory`, and the MAC accumulation loop still has II=18. Further work is
+required to introduce a true line-buffer/window-buffer dataflow and reduce
+the effective initiation interval toward II=1.
+
+## Report path
+
+`D:\\.HLS\\streaming_frontend_core\\streaming_frontend_core\\solution1\\syn\\report\\streaming_frontend_csynth.rpt`

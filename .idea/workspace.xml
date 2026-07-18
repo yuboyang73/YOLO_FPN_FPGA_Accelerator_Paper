@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e44d99bd-2012-4297-bbe6-53e3e5b2bc10" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/.py_demo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/.py_demo/.idea/.py_demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/.py_demo/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/.py_demo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/.py_demo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/.py_demo/00_math_numpy/01_vectorization_dot_demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.DeepLearning/深度学习_整理版.md" beforeDir="false" afterPath="$PROJECT_DIR$/.DeepLearning/深度学习_整理版.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.学习笔记/学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/.学习笔记/学习笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_论文写作/Experimental Setup and Preliminary Verification.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3GJcKb5RZg630GKhcGzqSbVgwv7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e44d99bd-2012-4297-bbe6-53e3e5b2bc10" name="更改" comment="" />
+      <created>1783693050603</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783693050603</updated>
+      <workItem from="1783693051778" duration="1000" />
+      <workItem from="1784356221070" duration="5000" />
+    </task>
+    <servers />
+  </component>
+</project>

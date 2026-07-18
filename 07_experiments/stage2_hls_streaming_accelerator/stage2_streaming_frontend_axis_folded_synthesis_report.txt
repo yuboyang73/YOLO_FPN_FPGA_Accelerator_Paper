@@ -1,0 +1,52 @@
+Stage 2 - Folded AXI4-Stream Line/Window Dataflow Record
+Date: 2026-07-18
+
+Top function: streaming_frontend_axis
+Target part: xc7z020-clg400-1
+Clock constraint: 5.00 ns
+
+Implementation:
+- Direct AXI4-Stream input/output; no full-frame input/output staging buffers.
+- Two-row line buffer and 3x3 window buffer scan zero-padded planes.
+- Four output-channel tiles are processed, with 16 output channels per tile.
+- Partial sums are retained on chip and the input feature map is replayed once per tile.
+- Weights use an ap_memory interface.
+
+C Simulation evidence:
+Source log: D:\.HLS\streaming_frontend_core\streaming_frontend_core\solution1\csim\report\streaming_frontend_axis_csim.log
+Input values: 102400 per replayed frame
+Weight values: 36864
+Golden output values: 102400
+Input replay count: 4
+MSE: 0
+Maximum absolute error: 0
+Result: PASS
+
+C Synthesis evidence:
+Report: D:\.HLS\streaming_frontend_core\streaming_frontend_core\solution1\syn\report\streaming_frontend_axis_csynth.rpt
+Estimated clock period: 6.138 ns
+Estimated Fmax: 162.91 MHz
+Latency: 1,392,966 cycles
+Interval: 1,392,967 cycles
+BRAM_18K: 80 / 280
+DSP: 144 / 220
+FF: 54,501 / 106,400
+LUT: 38,432 / 53,200
+
+Pipeline evidence:
+- VITIS_LOOP_21_2... achieved II=2, target II=1.
+- VITIS_LOOP_42_6... achieved II=2, target II=1.
+- VITIS_LOOP_57_10... achieved II=2, target II=1.
+- VITIS_LOOP_74_13... achieved II=2, target II=1.
+- VITIS_LOOP_128_18... achieved II=2, target II=1.
+Conclusion: explicit pipelined line/window/partial-sum loops are present, but the current implementation does not meet II=1 or the 5 ns timing target.
+
+C/RTL Cosimulation:
+Script: 07_experiments\stage2_hls_streaming_accelerator\run_streaming_frontend_axis_cosim.tcl
+XSim generated the C/RTL testbench and started Verilog simulation. The run was stopped after approximately five minutes without a PASS/FAIL completion record. No C/RTL PASS claim is made.
+
+Next engineering actions:
+1. Add a reduced-size C/RTL smoke-test configuration.
+2. Break the 16-output-channel partial-sum dependency and balance the adder tree to target II=1.
+3. Reduce the critical path below 5 ns through datatype, partition, and scheduling changes.
+4. Rerun full C/RTL Cosimulation after the smoke test passes.

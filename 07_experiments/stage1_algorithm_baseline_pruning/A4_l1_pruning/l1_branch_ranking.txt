@@ -1,0 +1,6 @@
+L1-Norm Skip-Branch Ranking
+
+rank=1 | branch=L4_to_C14 | concat=14 | receiver=15 | weight_shape=(64, 64, 1, 1) | l1_sum=132.324219 | l1_mean=0.03230572 | weight_count=4096
+rank=2 | branch=L12_to_C17 | concat=17 | receiver=18 | weight_shape=(128, 128, 1, 1) | l1_sum=372.411438 | l1_mean=0.02273019 | weight_count=16384
+rank=3 | branch=L6_to_C11 | concat=11 | receiver=12 | weight_shape=(128, 128, 1, 1) | l1_sum=441.293152 | l1_mean=0.02693440 | weight_count=16384
+rank=4 | branch=L9_to_C20 | concat=20 | receiver=21 | weight_shape=(256, 256, 1, 1) | l1_sum=1155.696777 | l1_mean=0.01763453 | weight_count=65536

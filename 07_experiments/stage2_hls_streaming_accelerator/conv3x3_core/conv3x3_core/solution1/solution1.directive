@@ -1,0 +1,35 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="conv3x3_core" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="conv3x3_core"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv3x3_core" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="conv3x3_core"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv3x3_core" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="conv3x3_core"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv3x3_core" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="conv3x3_core"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv3x3_core" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="conv3x3_core"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv3x3_core" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="conv3x3_core"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

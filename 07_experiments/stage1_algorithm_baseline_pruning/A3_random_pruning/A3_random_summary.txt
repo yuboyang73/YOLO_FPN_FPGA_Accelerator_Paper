@@ -1,0 +1,9 @@
+A3 Random Pruning Summary
+Runs: 3
+Random seed: 0
+mAP50 values: [0.767, 0.763, 0.766]
+mAP50 mean: 0.765333
+mAP50 sample std: 0.002082
+mAP50-95 values: [0.442, 0.438, 0.443]
+mAP50-95 mean: 0.441000
+mAP50-95 sample std: 0.002646

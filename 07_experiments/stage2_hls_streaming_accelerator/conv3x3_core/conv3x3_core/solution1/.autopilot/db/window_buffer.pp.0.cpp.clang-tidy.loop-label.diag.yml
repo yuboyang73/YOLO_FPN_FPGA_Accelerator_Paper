@@ -1,0 +1,58 @@
+---
+MainSourceFile:  'D:/.YOLO_FPN_FPGA_Accelerator_Paper/07_experiments/stage2_hls_streaming_accelerator/conv3x3_core/conv3x3_core/solution1/.autopilot/db/window_buffer.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1211_1:  '
+    FileOffset:      1211
+    FilePath:        'D:\Xilinx\Vitis_HLS\2022.2\common\technology\autopilot\ap_int_base.h'
+    Replacements:    
+      - FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\window_buffer.pp.0.cpp'
+        Offset:          51972
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1211_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        'D:\Xilinx\Vitis_HLS\2022.2\common\technology\autopilot\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\window_buffer.pp.0.cpp'
+        Offset:          258988
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        'D:\Xilinx\Vitis_HLS\2022.2\common\technology\autopilot\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\window_buffer.pp.0.cpp'
+        Offset:          259427
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        'D:\Xilinx\Vitis_HLS\2022.2\common\technology\autopilot\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\window_buffer.pp.0.cpp'
+        Offset:          259867
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1245_1:  '
+    FileOffset:      1245
+    FilePath:        'D:\Xilinx\Vitis_HLS\2022.2\common\technology\autopilot\ap_fixed_base.h'
+    Replacements:    
+      - FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\window_buffer.pp.0.cpp'
+        Offset:          521204
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1245_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_10_1:  '
+    FileOffset:      10
+    FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\window_buffer.cpp'
+    Replacements:    
+      - FilePath:        'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\window_buffer.pp.0.cpp'
+        Offset:          864690
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_10_1: '
+...

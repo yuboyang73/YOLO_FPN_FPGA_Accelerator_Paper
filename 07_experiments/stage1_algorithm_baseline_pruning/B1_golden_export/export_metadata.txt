@@ -1,0 +1,31 @@
+B1 Golden Export Metadata
+
+model: D:/.YOLO_FPN_FPGA_Accelerator_Paper/07_experiments/stage1_algorithm_baseline_pruning/A2_entropy_pruning/A2_entropy_pruned_finetune_50ep/weights/best.pt
+image: D:\.YOLO_FPN_FPGA_Accelerator_Paper\03_dataset\yolo_format\images\val\crazing_10.jpg
+target: model.model[12].m[0].cv1.conv
+format: signed Q8.8
+scale: 256
+rounding: nearest
+saturation: [-32768, 32767]
+
+input_shape: (1, 64, 40, 40)
+output_shape: (1, 64, 40, 40)
+weight_shape: (64, 64, 3, 3)
+
+input_values: 102400
+output_values: 102400
+weight_values: 36864
+
+input_saturation_count: 0
+output_saturation_count: 0
+weight_saturation_count: 0
+
+captured_output_vs_float_replay_mse: 0.000000000000e+00
+quantized_output_vs_float_replay_mse: 1.996489590965e-04
+
+serialization:
+input/output = NCHW contiguous order
+weights = OIHW contiguous order
+
+output_boundary:
+raw 3x3 convolution output before BatchNorm and SiLU

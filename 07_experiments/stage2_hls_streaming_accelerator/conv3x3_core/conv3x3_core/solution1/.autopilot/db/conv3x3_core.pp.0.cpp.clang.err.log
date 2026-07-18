@@ -1,0 +1,36 @@
+In file included from ../conv3x3_core.cpp:1:
+In file included from ../conv3x3_core.h:4:
+In file included from D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed.h:10:
+In file included from D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:16:
+In file included from D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int.h:12:
+D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:678:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=and_reduce_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:692:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=or_reduce_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:706:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=xor_reduce_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+D:/.YOLO_FPN_FPGA_Accelerator_Paper/07_experiments/stage2_hls_streaming_accelerator/conv3x3_core/conv3x3_core/solution1/csynth.tcl:23:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=name=conv3x3_core_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=conv3x3_core
+        ^
+D:/.YOLO_FPN_FPGA_Accelerator_Paper/07_experiments/stage2_hls_streaming_accelerator/conv3x3_core/conv3x3_core/solution1/directives.tcl:6:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=name=conv3x3_core_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=conv3x3_core
+        ^
+../conv3x3_core.cpp:24:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=ap_memory port=input_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_memory port=input
+        ^
+../conv3x3_core.cpp:25:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=ap_memory port=weights_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_memory port=weights
+        ^
+../conv3x3_core.cpp:26:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=ap_memory port=output_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_memory port=output
+        ^
+../conv3x3_core.cpp:27:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE off
+        ^
+../conv3x3_core.cpp:37:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_flatten_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=conv3x3_core_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS LOOP_FLATTEN off
+        ^
+10 warnings generated.

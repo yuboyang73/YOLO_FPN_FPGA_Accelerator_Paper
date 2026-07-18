@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="conv3x3_core.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core.cpp"/>
+    <originFiles name="conv3x3_core.h" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core.h"/>
+    <originFiles name="line_buffer.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\line_buffer.cpp"/>
+    <originFiles name="line_buffer.h" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\line_buffer.h"/>
+    <originFiles name="window_buffer.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\window_buffer.cpp"/>
+    <originFiles name="window_buffer.h" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\window_buffer.h"/>
+    <originFiles name="fsm_controller.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\fsm_controller.cpp"/>
+    <originFiles name="fsm_controller.h" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\fsm_controller.h"/>
+    <originFiles name="streaming_frontend.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\streaming_frontend.cpp"/>
+    <originFiles name="streaming_frontend.h" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\streaming_frontend.h"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_streaming_frontend.cpp" path="D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\tb_streaming_frontend.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

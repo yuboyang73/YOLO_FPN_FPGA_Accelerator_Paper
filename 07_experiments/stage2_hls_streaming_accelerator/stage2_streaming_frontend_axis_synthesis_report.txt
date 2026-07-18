@@ -1,0 +1,90 @@
+# Stage 2 AXI4-Stream Frontend C Synthesis Report
+
+Date: 2026-07-18
+Tool: Vitis HLS 2022.2
+Project: streaming_frontend_core
+Solution: solution1
+Top function: streaming_frontend_axis
+Target part: xc7z020-clg400-1
+Target clock: 5.00 ns (200 MHz)
+
+## Configuration fix
+
+The stale top-function directive was corrected in:
+
+`D:\\.HLS\\streaming_frontend_core\\streaming_frontend_core\\solution1\\directives.tcl`
+
+The active directive is now:
+
+```tcl
+set_directive_top -name streaming_frontend_axis "streaming_frontend_axis"
+```
+
+## C Simulation
+
+```text
+[TB] Starting AXI4-Stream frontend...
+MSE: 0
+Max absolute error: 0
+[PASS] AXI4-Stream frontend matches golden_output.txt
+INFO: [SIM 1] CSim done with 0 errors.
+```
+
+The reported maximum stream depth was 102400. This is expected for the
+current wrapper because the testbench fills the input stream before the
+wrapper finishes consuming it. It is not a final streaming-buffer result.
+
+## Top-level performance estimates
+
+- Top function: `streaming_frontend_axis`
+- Estimated clock period: 3.592 ns
+- Target clock period: 5.000 ns
+- Estimated Fmax: 278.36 MHz
+- Latency: 120,524,819 cycles
+- Interval: 120,524,820 cycles
+- Estimated latency at the 5 ns target: approximately 0.603 s
+- Top-level pipeline type: no
+
+## Resource estimates
+
+| Resource | Used | Available | Utilization |
+|---|---:|---:|---:|
+| BRAM_18K | 256 | 280 | 91% |
+| DSP | 9 | 220 | 4% |
+| FF | 3,882 | 106,400 | 3% |
+| LUT | 4,545 | 53,200 | 8% |
+| URAM | 0 | 0 | 0% |
+
+The BRAM use comes from the two staging arrays:
+
+- `input_buffer`: 128 BRAM_18K
+- `output_buffer`: 128 BRAM_18K
+
+## AXI interface confirmation
+
+The generated interface report contains:
+
+```text
+input_stream_TDATA    16-bit axis input
+input_stream_TVALID   axis input handshake
+input_stream_TREADY   axis input handshake
+output_stream_TDATA   16-bit axis output
+output_stream_TVALID  axis output handshake
+output_stream_TREADY  axis output handshake
+weights               ap_memory
+```
+
+## Current interpretation
+
+The AXI4-Stream interface is now syntactically and functionally verified,
+and the design meets the 5 ns estimated timing target. However, the current
+wrapper still materializes the full input and output feature maps in local
+buffers, consuming 256 of the 280 available BRAM_18K blocks. It is therefore
+an AXI interface baseline rather than the final streaming accelerator.
+
+The next hardware optimization is to remove both full-size staging arrays
+and connect the AXI stream directly to a line-buffer/window-buffer dataflow.
+
+## Report path
+
+`D:\\.HLS\\streaming_frontend_core\\streaming_frontend_core\\solution1\\syn\\report\\streaming_frontend_axis_csynth.rpt`

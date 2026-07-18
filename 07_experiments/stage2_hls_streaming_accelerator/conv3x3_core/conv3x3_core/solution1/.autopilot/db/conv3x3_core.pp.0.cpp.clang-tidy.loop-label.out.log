@@ -1,0 +1,55 @@
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:1335:7: warning: Added loop label VITIS_LOOP_1211_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1211_1: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:1335:7: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:2309:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:2309:5: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:2323:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:2323:5: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:2337:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:2337:5: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:3936:7: warning: Added loop label VITIS_LOOP_1245_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1245_1: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:3936:7: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9129:2: warning: Added loop label VITIS_LOOP_29_1:   [xilinx-label-all-loops]
+ for (int oc = 0; oc < OUT_CHANNELS; ++oc) {
+ ^~~
+ VITIS_LOOP_29_1: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9129:2: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9130:9: warning: Added loop label VITIS_LOOP_30_2:   [xilinx-label-all-loops]
+        for (int row = 0; row < IMAGE_HEIGHT; ++row) {
+        ^~~
+        VITIS_LOOP_30_2: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9130:9: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9131:13: warning: Added loop label VITIS_LOOP_31_3:   [xilinx-label-all-loops]
+            for (int col = 0; col < IMAGE_WIDTH; ++col) {
+            ^~~
+            VITIS_LOOP_31_3: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9131:13: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9134:17: warning: Added loop label VITIS_LOOP_34_4:   [xilinx-label-all-loops]
+                for (int ic = 0; ic < IN_CHANNELS; ++ic) {
+                ^~~
+                VITIS_LOOP_34_4: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9134:17: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9135:21: warning: Added loop label VITIS_LOOP_35_5:   [xilinx-label-all-loops]
+                    for (int kr = 0; kr < KERNEL_SIZE; ++kr) {
+                    ^~~
+                    VITIS_LOOP_35_5: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9135:21: note: FIX-IT applied suggested code changes
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9136:25: warning: Added loop label VITIS_LOOP_36_6:   [xilinx-label-all-loops]
+                        for (int kc = 0; kc < KERNEL_SIZE; ++kc) {
+                        ^~~
+                        VITIS_LOOP_36_6: 
+D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\conv3x3_core\conv3x3_core\solution1\.autopilot\db\conv3x3_core.pp.0.cpp:9136:25: note: FIX-IT applied suggested code changes

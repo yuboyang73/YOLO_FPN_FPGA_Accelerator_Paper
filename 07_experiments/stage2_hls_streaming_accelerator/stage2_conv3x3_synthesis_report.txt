@@ -1,0 +1,73 @@
+# Stage 2 C Synthesis Report Summary
+
+## Report Source
+
+Top-level report directory:
+
+conv3x3_core/conv3x3_core/solution1/syn/report/
+
+Target part: xc7z020-clg400-1
+Target clock period: 5.00 ns
+Clock uncertainty: 1.35 ns
+
+## Top-Level conv3x3_core
+
+Report: conv3x3_core_csynth.xml / csynth.xml
+
+- Top function: conv3x3_core
+- Pipeline type: no
+- Estimated clock period: 6.442 ns
+- Best/average/worst latency: 1,747,156,673 cycles
+- Estimated real-time latency: 11.255 s
+- Top-level interval: 1,747,156,674 cycles
+- BRAM_18K: 2
+- DSP: 13
+- FF: 9,303
+- LUT: 9,221
+- Available BRAM_18K: 280
+- Available DSP: 220
+- Available FF: 106,400
+- Available LUT: 53,200
+
+Timing note:
+
+The estimated clock period of 6.442 ns is slower than the 5 ns target clock.
+The current unoptimized top-level conv3x3_core therefore does not meet the
+200 MHz target.
+
+## Internal Pipeline Loop Report
+
+Report: conv3x3_core_Pipeline_VITIS_LOOP_36_6_csynth.xml
+
+- Reported object: conv3x3_core_Pipeline_VITIS_LOOP_36_6
+- Estimated clock period: 3.977 ns
+- Loop latency: 78 cycles
+- Pipeline depth: 45 cycles
+- Internal loop II: 17
+- Reported object latency: 80 cycles
+
+Interpretation:
+
+This is an internal loop/module report, not the top-level accelerator result.
+Its II=17 must not be reported as the overall accelerator II, and it does not
+demonstrate the target II=1 requirement.
+
+## Current Evaluation
+
+- Functional C Simulation against golden_output.txt: PASS
+- MSE: 0
+- Maximum absolute error: 0
+- Top-level timing target: NOT MET
+- Top-level II=1 target: NOT MET
+- Final streaming_frontend synthesis result: NOT YET MEASURED
+
+## Required Next Actions
+
+1. Synthesize the current streaming_frontend top function rather than only
+   conv3x3_core.
+2. Replace the current large functional buffer with a streaming architecture.
+3. Add Line Buffer and Window Buffer partitioning pragmas.
+4. Add PIPELINE and DATAFLOW incrementally.
+5. Resolve the estimated-clock-period violation before claiming 200 MHz.
+6. Record top-level latency, II, LUT, FF, DSP, and BRAM from the
+   streaming_frontend synthesis report.

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [SYN 201-102] Cannot find function 'streaming_frontend' in design source files. Please check the design sources." projectName="conv3x3_core" solutionName="solution1" date="2026-07-17T22:13:54.811+0800"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYNCHK 200-23] D:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1052: variable-indexed range selection may cause suboptimal QoR." projectName="conv3x3_core" solutionName="solution1" date="2026-07-17T22:13:53.591+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

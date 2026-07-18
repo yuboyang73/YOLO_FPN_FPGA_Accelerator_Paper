@@ -1,0 +1,37 @@
+﻿# B1 Golden Data Export Completion Record
+
+Final model:
+A2_entropy_pruned_finetune_50ep/weights/best.pt
+
+Target operator:
+model.model[12].m[0].cv1.conv
+
+Operator shape:
+Conv2d, 64 input channels, 64 output channels, 3x3 kernel, padding 1
+
+Fixed-point format:
+Signed Q8.8, nearest rounding, saturation
+
+Exported files:
+- golden_input.txt: 102400 values, NCHW
+- golden_output.txt: 102400 values, NCHW
+- weights.txt: 36864 values, OIHW
+- export_metadata.txt
+
+Tensor shapes:
+- input: 1 x 64 x 40 x 40
+- output: 1 x 64 x 40 x 40
+- weights: 64 x 64 x 3 x 3
+
+Verification:
+- captured output vs float replay MSE: 0
+- Q8.8 output vs float replay MSE: 1.996489590965e-04
+- input saturation count: 0
+- output saturation count: 0
+- weight saturation count: 0
+
+Evidence boundary:
+The golden output represents the raw quantized 3x3 convolution output before BatchNorm and SiLU.
+
+Stage 2 acceptance:
+The future HLS implementation must be compared against golden_output.txt. The HLS-to-golden MSE target is <= 1e-6; this is separate from float-to-Q8.8 quantization error.

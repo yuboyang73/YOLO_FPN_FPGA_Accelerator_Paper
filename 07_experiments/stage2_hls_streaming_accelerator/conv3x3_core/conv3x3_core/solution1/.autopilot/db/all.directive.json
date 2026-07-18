@@ -1,0 +1,95 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "conv3x3_core",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "D:\/.YOLO_FPN_FPGA_Accelerator_Paper\/07_experiments\/stage2_hls_streaming_accelerator\/conv3x3_core\/conv3x3_core\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "conv3x3_core"
+              }]
+          }
+        },
+        {
+          "functionName": "conv3x3_core",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "D:\/.YOLO_FPN_FPGA_Accelerator_Paper\/07_experiments\/stage2_hls_streaming_accelerator\/conv3x3_core\/conv3x3_core\/solution1\/csynth.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "conv3x3_core"
+              }]
+          }
+        },
+        {
+          "functionName": "conv3x3_core",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "D:\/.YOLO_FPN_FPGA_Accelerator_Paper\/07_experiments\/stage2_hls_streaming_accelerator\/conv3x3_core\/conv3x3_core\/solution1\/csynth.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "conv3x3_core"
+              }]
+          }
+        },
+        {
+          "functionName": "conv3x3_core",
+          "label": "",
+          "functionLabel": "",
+          "id": "4",
+          "sourceFile": "D:\/.YOLO_FPN_FPGA_Accelerator_Paper\/07_experiments\/stage2_hls_streaming_accelerator\/conv3x3_core\/conv3x3_core\/solution1\/csynth.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "conv3x3_core"
+              }]
+          }
+        },
+        {
+          "functionName": "conv3x3_core",
+          "label": "",
+          "functionLabel": "",
+          "id": "5",
+          "sourceFile": "D:\/.YOLO_FPN_FPGA_Accelerator_Paper\/07_experiments\/stage2_hls_streaming_accelerator\/conv3x3_core\/conv3x3_core\/solution1\/csynth.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "conv3x3_core"
+              }]
+          }
+        },
+        {
+          "functionName": "conv3x3_core",
+          "label": "",
+          "functionLabel": "",
+          "id": "6",
+          "sourceFile": "D:\/.YOLO_FPN_FPGA_Accelerator_Paper\/07_experiments\/stage2_hls_streaming_accelerator\/conv3x3_core\/conv3x3_core\/solution1\/csynth.tcl",
+          "sourceLine": "23",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "conv3x3_core"
+              }]
+          }
+        }
+      ]
+    }]}

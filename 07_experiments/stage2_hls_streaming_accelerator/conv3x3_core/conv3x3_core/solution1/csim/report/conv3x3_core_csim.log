@@ -1,0 +1,18 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../tb_streaming_frontend.cpp in debug mode
+   Compiling ../../../../../window_buffer.cpp in debug mode
+   Compiling ../../../../../streaming_frontend.cpp in debug mode
+   Compiling ../../../../../line_buffer.cpp in debug mode
+   Compiling ../../../../../fsm_controller.cpp in debug mode
+   Compiling ../../../../../conv3x3_core.cpp in debug mode
+   Generating csim.exe
+[TB] Input values: 102400
+[TB] Weight values: 36864
+[TB] Golden output values: 102400
+[TB] Starting streaming_frontend...
+MSE: 0
+Max absolute error: 0
+[PASS] Streaming Conv matches golden_output.txt
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,18 @@
+Q8.8 Quantization Diagnostic
+
+float_input_range: [-0.27846456, 4.67149687]
+quantized_input_range: [-0.27734375, 4.67187500]
+
+float_weight_range: [-0.29153717, 0.61551410]
+quantized_weight_range: [-0.29296875, 0.61718750]
+
+float_output_range: [-6.11127234, 5.30605602]
+quantized_output_range: [-5.46093750, 4.21875000]
+float_output_std: 0.89847803
+
+mse: 1.096870541573e+00
+rmse: 1.047315874783e+00
+mae: 8.683267235756e-01
+max_absolute_error: 2.168281555176e+00
+signal_power: 1.259733796120e+00
+normalized_mse: 8.707161345923e-01

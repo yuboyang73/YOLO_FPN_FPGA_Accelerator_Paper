@@ -1,0 +1,157 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source D:/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'jiulongshengming' on host 'desktop-b41pg27' (Windows NT_amd64 version 6.2) on Sat Jul 18 16:04:51 +0800 2026
+INFO: [HLS 200-10] In directory 'D:/.YOLO_FPN_FPGA_Accelerator_Paper'
+Sourcing Tcl script 'D:\.YOLO_FPN_FPGA_Accelerator_Paper\07_experiments\stage2_hls_streaming_accelerator\run_streaming_frontend_axis_cosim.tcl'
+INFO: [HLS 200-1510] Running: open_project streaming_frontend_core 
+INFO: [HLS 200-10] Opening project 'D:/.HLS/streaming_frontend_core/streaming_frontend_core'.
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Opening solution 'D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=5ns
+INFO: [HLS 200-1510] Running: set_directive_top -name streaming_frontend_axis streaming_frontend_axis 
+INFO: [HLS 200-1510] Running: cosim_design -rtl verilog -tool xsim -trace_level none 
+Running Dispatch Server on port: 49276
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "D:/Xilinx/Vitis_HLS/2022.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling apatb_streaming_frontend_axis_util.cpp
+   Compiling conv3x3_core.cpp_pre.cpp.tb.cpp
+   Compiling fsm_controller.cpp_pre.cpp.tb.cpp
+   Compiling tb_streaming_frontend_axis.cpp_pre.cpp.tb.cpp
+   Compiling line_buffer.cpp_pre.cpp.tb.cpp
+   Compiling streaming_frontend.cpp_pre.cpp.tb.cpp
+   Compiling streaming_frontend_axis.cpp_pre.cpp.tb.cpp
+   Compiling apatb_streaming_frontend_axis.cpp
+   Compiling window_buffer.cpp_pre.cpp.tb.cpp
+   Compiling apatb_streaming_frontend_axis_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+[TB] Starting folded AXI4-Stream frontend...
+MSE: 0
+Max absolute error: 0
+[PASS] Folded AXI4-Stream frontend matches golden_output.txt
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 409600
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+D:\.HLS\streaming_frontend_core\streaming_frontend_core\solution1\sim\verilog>set PATH= 
+
+D:\.HLS\streaming_frontend_core\streaming_frontend_core\solution1\sim\verilog>call D:/Xilinx/Vivado/2022.2/bin/xelab xil_defaultlib.apatb_streaming_frontend_axis_top glbl -Oenable_linking_all_libraries  -prj streaming_frontend_axis.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib "ieee_proposed=./ieee_proposed" -s streaming_frontend_axis  
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_streaming_frontend_axis_top glbl -Oenable_linking_all_libraries -prj streaming_frontend_axis.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s streaming_frontend_axis 
+Multi-threading is on. Using 30 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_automem_weights.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_weights
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_axi_s_input_stream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_input_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_axi_s_output_stream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_output_stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_streaming_frontend_axis_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_input_buffer_V_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_input_buffer_V_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_line_buf_V_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_line_buf_V_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_mul_24s_24s_48_5_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_mul_24s_24s_48_5_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_mux_164_40_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_mux_164_40_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_output_buffer_V_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_output_buffer_V_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_regslice_both
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_128_18_VITIS_LOOP_130_19_VITIS_LOOP_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_128_18_VITIS_LOOP_130_19_VITIS_LOOP_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_21_2_VITIS_LOOP_23_3_VITIS_LOOP_24_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_21_2_VITIS_LOOP_23_3_VITIS_LOOP_24_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_42_6_VITIS_LOOP_43_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_42_6_VITIS_LOOP_43_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_57_10_VITIS_LOOP_59_11_VITIS_LOOP_61.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_57_10_VITIS_LOOP_59_11_VITIS_LOOP_61
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_74_13_VITIS_LOOP_75_14.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_streaming_frontend_axis_Pipeline_VITIS_LOOP_74_13_VITIS_LOOP_75_14
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/streaming_frontend_axis_streaming_frontend_axis_stream_ap_fixed_const_64_3_3_stream_partial_9_RAM_AUTbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module streaming_frontend_axis_streaming_frontend_axis_stream_ap_fixed_const_64_3_3_stream_partial_9_RAM_AUTbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'axis_block_info' remains unconnected for this instance [D:/.HLS/streaming_frontend_core/streaming_frontend_core/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v:21]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.streaming_frontend_axis_streamin...
+Compiling module xil_defaultlib.streaming_frontend_axis_line_buf...
+Compiling module xil_defaultlib.streaming_frontend_axis_flow_con...
+Compiling module xil_defaultlib.streaming_frontend_axis_streamin...
+Compiling module xil_defaultlib.streaming_frontend_axis_streamin...
+Compiling module xil_defaultlib.streaming_frontend_axis_streamin...
+Compiling module xil_defaultlib.streaming_frontend_axis_mux_164_...
+Compiling module xil_defaultlib.streaming_frontend_axis_streamin...
+Compiling module xil_defaultlib.streaming_frontend_axis_mul_24s_...
+Compiling module xil_defaultlib.streaming_frontend_axis_streamin...
+Compiling module xil_defaultlib.streaming_frontend_axis_regslice...
+Compiling module xil_defaultlib.streaming_frontend_axis
+Compiling module xil_defaultlib.AESL_automem_weights
+Compiling module xil_defaultlib.fifo(DEPTH=409600,WIDTH=16)
+Compiling module xil_defaultlib.AESL_axi_s_input_stream
+Compiling module xil_defaultlib.fifo(DEPTH=102400,WIDTH=16)
+Compiling module xil_defaultlib.AESL_axi_s_output_stream
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=9)
+Compiling module xil_defaultlib.upc_loop_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_streaming_frontend_axis_to...
+Compiling module work.glbl
+Built simulation snapshot streaming_frontend_axis
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/streaming_frontend_axis/xsim_script.tcl
+# xsim {streaming_frontend_axis} -autoloadwcfg -tclbatch {streaming_frontend_axis.tcl}
+Time resolution is 1 ps
+source streaming_frontend_axis.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "113000"

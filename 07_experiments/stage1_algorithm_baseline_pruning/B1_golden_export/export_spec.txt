@@ -1,0 +1,46 @@
+﻿# B1 Golden Data Export Specification
+
+Final model:
+../A2_entropy_pruning/A2_entropy_pruned_finetune_50ep/weights/best.pt
+
+Target module:
+model.model[12].m[0].cv1.conv
+
+Operator:
+Conv2d(64, 64, kernel_size=3x3, stride=1, padding=1, bias=False)
+
+Expected input shape:
+1 x 64 x 40 x 40
+
+Expected output shape:
+1 x 64 x 40 x 40
+
+Weight shape:
+64 x 64 x 3 x 3
+
+Golden output boundary:
+Raw Conv2d output before BatchNorm and SiLU
+
+Input sample:
+First validation image after lexicographical sorting
+
+Fixed-point format:
+Signed 16-bit Q8.8, corresponding to ap_fixed<16,8>
+
+Quantization:
+q_int = clip(round(value * 256), -32768, 32767)
+q_value = q_int / 256
+
+Export files:
+golden_input.txt
+golden_output.txt
+weights.txt
+export_metadata.txt
+
+Tensor serialization order:
+NCHW for input and output
+OIHW for weights
+
+Important boundary:
+This export validates the first 3x3 convolution inside the post-fusion C2f block.
+It does not represent the complete C2f block and does not include BN or SiLU.

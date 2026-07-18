@@ -1,0 +1,12 @@
+All YOLOv8n Concat Branch Entropy Results
+
+Ranking: low entropy to high entropy
+
+rank=1 | concat=20 | branch=0 | source_layer=19 | shape=(1, 128, 20, 20) | samples=64 | mean_entropy=5.580449 | std_entropy=0.058309 | activation_elements=51200
+rank=2 | concat=17 | branch=0 | source_layer=16 | shape=(1, 64, 40, 40) | samples=64 | mean_entropy=5.685125 | std_entropy=0.086789 | activation_elements=102400
+rank=3 | concat=11 | branch=1 | source_layer=6 | shape=(1, 128, 40, 40) | samples=64 | mean_entropy=5.792360 | std_entropy=0.331173 | activation_elements=204800
+rank=4 | concat=14 | branch=1 | source_layer=4 | shape=(1, 64, 80, 80) | samples=64 | mean_entropy=6.070816 | std_entropy=0.559792 | activation_elements=409600
+rank=5 | concat=14 | branch=0 | source_layer=13 | shape=(1, 128, 80, 80) | samples=64 | mean_entropy=6.265172 | std_entropy=0.052066 | activation_elements=819200
+rank=6 | concat=17 | branch=1 | source_layer=12 | shape=(1, 128, 40, 40) | samples=64 | mean_entropy=6.265172 | std_entropy=0.052066 | activation_elements=204800
+rank=7 | concat=11 | branch=0 | source_layer=10 | shape=(1, 256, 40, 40) | samples=64 | mean_entropy=6.412962 | std_entropy=0.070758 | activation_elements=409600
+rank=8 | concat=20 | branch=1 | source_layer=9 | shape=(1, 256, 20, 20) | samples=64 | mean_entropy=6.412962 | std_entropy=0.070758 | activation_elements=102400

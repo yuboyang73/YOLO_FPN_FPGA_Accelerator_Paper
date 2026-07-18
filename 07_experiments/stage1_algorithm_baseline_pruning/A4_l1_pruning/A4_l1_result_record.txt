@@ -1,0 +1,41 @@
+﻿# A4 L1-Norm Pruning Result
+
+Selection criterion:
+Raw L1 sum of the receiving C2f cv1 convolution weights associated with each skip-branch channel group.
+
+Selected branch:
+Layer 4 -> Concat 14
+
+L1 score:
+132.324219
+
+Weight slice:
+64 x 64 x 1 x 1
+
+Pruning budget:
+One skip branch
+
+Reused experiment:
+A3_random_pruning/run2_L4_to_C14_finetune_50ep
+
+Reuse reason:
+The L1-Norm criterion selected exactly the same branch topology as Random Run 2.
+Both experiments use the same baseline checkpoint, initialized weights, training configuration, seed, and 50-epoch fine-tuning budget. Repeating the identical training job would not create an independent structural experiment.
+
+Final independent validation:
+mAP@0.5: 0.763
+mAP@0.5:0.95: 0.438
+
+Parameters:
+3,007,922
+
+Reference rebuilt baseline parameters:
+3,012,018
+
+Parameter reduction:
+4,096
+
+Evidence:
+l1_branch_ranking.txt
+../A3_random_pruning/run2_final_val
+../A3_random_pruning/run2_L4_to_C14_finetune_50ep/weights/best.pt

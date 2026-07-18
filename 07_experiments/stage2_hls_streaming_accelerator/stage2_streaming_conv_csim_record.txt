@@ -1,0 +1,65 @@
+# Stage 2 Streaming Convolution C Simulation Record
+
+Experiment: Streaming Frontend + 3x3 Convolution Functional Integration
+Date: 2026-07-17
+Platform target: Xilinx Zynq-7020 / xc7z020clg400-1
+Clock target: 5 ns (200 MHz)
+Tool: Vitis HLS 2022.2
+
+## Input and Output
+
+- Input feature map: 64 x 40 x 40
+- Output feature map: 64 x 40 x 40
+- Kernel: 3 x 3
+- Padding: 1
+- Stride: 1
+- Input layout: NCHW
+- Weight layout: OIHW
+- Data type: signed Q8.8, ap_fixed<16,8>
+- Golden input: ../stage1_algorithm_baseline_pruning/B1_golden_export/golden_input.txt
+- Golden weights: ../stage1_algorithm_baseline_pruning/B1_golden_export/weights.txt
+- Golden output: ../stage1_algorithm_baseline_pruning/B1_golden_export/golden_output.txt
+
+## Architecture Under Test
+
+Golden Input -> Line Buffer -> Window Buffer -> FSM -> 3x3 MAC -> Output
+
+The current implementation uses a synthesis-oriented ap_fixed accumulator
+with convergent rounding and saturation. PIPELINE, ARRAY_PARTITION,
+AXI4-Stream, and resource-oriented HLS optimization have not yet been added.
+
+## Previously Verified Submodules
+
+- 3x3 Q8.8 convolution core C Simulation: PASS, MSE = 0
+- Line Buffer row shifting C Simulation: PASS
+- Window Buffer sliding C Simulation: PASS
+- FSM controller C Simulation: PASS
+- 64-channel 40x40 streaming frontend window extraction: PASS
+  - Input values checked: 102400
+  - Valid windows per channel: 1444
+  - Total window values checked: 831744
+
+## Current Full Convolution Verification
+
+Status: PASS_AFTER_SYNTHESIS_ORIENTED_FIXED_POINT_REWRITE
+MSE: 0
+Maximum absolute error: 0
+Input values: 102400
+Weight values: 36864
+Golden output values: 102400
+Result: Streaming Conv matches golden_output.txt
+
+Acceptance criterion:
+
+MSE <= 1e-6 when compared with golden_output.txt.
+
+The synthesis-oriented fixed-point implementation was revalidated
+successfully. The measured MSE is 0, and the maximum absolute error is 0.
+
+## Next Actions
+
+1. Run C Simulation with Clean Build enabled.
+2. Record MSE and maximum absolute error in this file.
+3. If C Simulation passes, begin C Synthesis.
+4. Add PIPELINE, ARRAY_PARTITION, and AXI4-Stream incrementally before final
+   resource and latency reporting.

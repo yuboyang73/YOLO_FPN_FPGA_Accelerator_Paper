@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #1f2937; }
+      .panel-title { font: 700 23px Arial, sans-serif; fill: #1f2937; }
+      .label { font: 700 19px Arial, sans-serif; fill: #1f2937; }
+      .detail { font: 16px Arial, sans-serif; fill: #374151; }
+      .edge-label { font: 16px Arial, sans-serif; fill: #374151; }
+      .panel { fill: #fafafa; stroke: #9ca3af; stroke-width: 2; rx: 18; }
+      .node { fill: #ffffff; stroke: #4b5563; stroke-width: 2; rx: 12; }
+      .skip { fill: #d6eaf8; stroke: #2874a6; stroke-width: 2; rx: 12; }
+      .concat { fill: #fdebd0; stroke: #ca6f1e; stroke-width: 2; rx: 12; }
+      .removed { fill: #fadbd8; stroke: #c0392b; stroke-width: 2; stroke-dasharray: 8 6; rx: 12; }
+      .pass { fill: #d5f5e3; stroke: #239b56; stroke-width: 2; rx: 12; }
+      .arrow { fill: none; stroke: #374151; stroke-width: 3; marker-end: url(#arrow); }
+      .pruned-arrow { fill: none; stroke: #c0392b; stroke-width: 3; stroke-dasharray: 10 7; marker-end: url(#red-arrow); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#374151"/>
+    </marker>
+    <marker id="red-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="720" fill="#ffffff"/>
+  <text x="800" y="42" text-anchor="middle" class="title">FPN Topology Before and After Entropy-Guided Pruning</text>
+
+  <rect x="35" y="72" width="745" height="610" class="panel"/>
+  <text x="407" y="112" text-anchor="middle" class="panel-title">(a) Baseline FPN Fusion</text>
+
+  <rect x="80" y="180" width="180" height="92" class="node"/>
+  <text x="170" y="211" text-anchor="middle" class="label">Layer 9</text>
+  <text x="170" y="236" text-anchor="middle" class="detail">SPPF</text>
+  <text x="170" y="259" text-anchor="middle" class="detail">256 × 20 × 20</text>
+
+  <rect x="310" y="180" width="180" height="92" class="node"/>
+  <text x="400" y="211" text-anchor="middle" class="label">Layer 10</text>
+  <text x="400" y="236" text-anchor="middle" class="detail">Upsample</text>
+  <text x="400" y="259" text-anchor="middle" class="detail">256 × 40 × 40</text>
+
+  <rect x="545" y="180" width="180" height="92" class="concat"/>
+  <text x="635" y="211" text-anchor="middle" class="label">Layer 11</text>
+  <text x="635" y="236" text-anchor="middle" class="detail">Concat</text>
+  <text x="635" y="259" text-anchor="middle" class="detail">384 × 40 × 40</text>
+
+  <rect x="310" y="365" width="180" height="105" class="skip"/>
+  <text x="400" y="397" text-anchor="middle" class="label">Layer 6</text>
+  <text x="400" y="423" text-anchor="middle" class="detail">Backbone skip feature</text>
+  <text x="400" y="450" text-anchor="middle" class="detail">128 × 40 × 40</text>
+
+  <rect x="545" y="525" width="180" height="92" class="node"/>
+  <text x="635" y="556" text-anchor="middle" class="label">Layer 12</text>
+  <text x="635" y="581" text-anchor="middle" class="detail">C2f fusion</text>
+  <text x="635" y="604" text-anchor="middle" class="detail">128 × 40 × 40</text>
+
+  <path d="M260 226 H310" class="arrow"/>
+  <path d="M490 226 H545" class="arrow"/>
+  <path d="M490 417 H520 Q535 417 535 402 V286 Q535 271 550 271" class="arrow"/>
+  <text x="512" y="389" text-anchor="end" class="edge-label">Long skip branch</text>
+  <path d="M635 272 V525" class="arrow"/>
+
+  <rect x="820" y="72" width="745" height="610" class="panel"/>
+  <text x="1192" y="112" text-anchor="middle" class="panel-title">(b) Entropy-Guided Pruned FPN</text>
+
+  <rect x="865" y="180" width="180" height="92" class="node"/>
+  <text x="955" y="211" text-anchor="middle" class="label">Layer 9</text>
+  <text x="955" y="236" text-anchor="middle" class="detail">SPPF</text>
+  <text x="955" y="259" text-anchor="middle" class="detail">256 × 20 × 20</text>
+
+  <rect x="1095" y="180" width="180" height="92" class="node"/>
+  <text x="1185" y="211" text-anchor="middle" class="label">Layer 10</text>
+  <text x="1185" y="236" text-anchor="middle" class="detail">Upsample</text>
+  <text x="1185" y="259" text-anchor="middle" class="detail">256 × 40 × 40</text>
+
+  <rect x="1330" y="180" width="190" height="105" class="pass"/>
+  <text x="1425" y="211" text-anchor="middle" class="label">Layer 11</text>
+  <text x="1425" y="237" text-anchor="middle" class="detail">Single-input pass-through</text>
+  <text x="1425" y="264" text-anchor="middle" class="detail">256 × 40 × 40</text>
+
+  <rect x="1095" y="365" width="180" height="105" class="removed"/>
+  <text x="1185" y="397" text-anchor="middle" class="label">Layer 6</text>
+  <text x="1185" y="423" text-anchor="middle" class="detail">Removed skip feature</text>
+  <text x="1185" y="450" text-anchor="middle" class="detail">128 × 40 × 40</text>
+
+  <rect x="1330" y="525" width="190" height="92" class="node"/>
+  <text x="1425" y="556" text-anchor="middle" class="label">Layer 12</text>
+  <text x="1425" y="581" text-anchor="middle" class="detail">Reconfigured C2f</text>
+  <text x="1425" y="604" text-anchor="middle" class="detail">128 × 40 × 40</text>
+
+  <path d="M1045 226 H1095" class="arrow"/>
+  <path d="M1275 226 H1330" class="arrow"/>
+  <path d="M1275 417 H1305 Q1320 417 1320 402 V299 Q1320 284 1335 284" class="pruned-arrow"/>
+  <text x="1295" y="389" text-anchor="end" class="edge-label" fill="#c0392b">Pruned</text>
+  <path d="M1425 285 V525" class="arrow"/>
+</svg>
